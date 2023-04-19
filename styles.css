@@ -1,0 +1,303 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/*Navegador*/
+.navbar {
+  background: #353a40;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.container-fluid {
+  margin: 0 30px;
+}
+
+.nav-link {
+  color: rgb(173, 173, 173);
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+/*Fondo*/
+.header {
+  height: 100vh;
+  background-image: linear-gradient(
+      to right,
+      #00000071 0%,
+      rgba(0, 0, 0, 0.493) 100%
+    ),
+    url(img/ba1.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 0.1px;
+}
+
+.container {
+  width: 45%;
+  flex-direction: column;
+  text-align: right;
+  color: white;
+  margin-right: 5%;
+  margin-top: 18%;
+}
+
+.parrafo {
+  font-size: 18px;
+}
+
+/*Sección 1*/
+.card {
+  display: flex;
+}
+
+.card-img-top {
+  object-fit: cover;
+}
+
+/*SECCIÓN 2*/
+.honolulu {
+  background: #353a40;
+  color: white;
+}
+
+.container-1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-2 {
+  text-align: left;
+  width: 50%;
+  margin: 20px;
+}
+
+.imagen-honolulu {
+  width: 50%;
+  object-fit: cover;
+}
+
+.row {
+  margin-right: 0;
+}
+
+/*Sección 3 "Formulario"*/
+.form {
+  width: 40rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.input {
+  border: 1px solid gainsboro;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0 8px;
+  margin-bottom: 10px;
+}
+
+.form-name {
+  width: 48%;
+  margin-right: 10px;
+}
+
+.form-surname {
+  width: 48%;
+  margin-left: 10px;
+}
+
+.form-message {
+  max-width: 99.4%;
+  min-width: 99.4%;
+  min-height: 100px;
+  max-height: 100px;
+  margin-bottom: 0;
+  font-size: 18px;
+  padding-top: 6px;
+}
+
+.form-submit {
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  background: #96c93e;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.form-submit:hover {
+  background: #81ad35;
+}
+
+/*Footer*/
+.footer {
+  background: #194057;
+  color: white;
+}
+
+.contenedor {
+  margin: 0 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-f {
+  font-size: 18px;
+}
+
+/*TODO: DISEÑO RESPONSIVO*/
+/*Navbar y footer*/
+@media (max-width: 992px) {
+  .container-fluid {
+    margin: 0;
+  }
+  .nav-link,
+  .text-succces {
+    margin-bottom: 20px;
+  }
+
+  /* footer */
+  .contenedor {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  .text-f {
+    font-size: 16px;
+    margin-bottom: 0;
+    padding: 8px !important;
+  }
+}
+
+/*Header hasta tablets*/
+@media (max-width: 768px) {
+  .header {
+    height: 100vh;
+  }
+
+  .container {
+    width: 100%;
+    margin-top: 40vh;
+    margin-right: 5%;
+    padding: 0 20px;
+  }
+}
+
+/*Header de tablets a portátiles*/
+@media (min-width: 768px) and (max-width: 992px) {
+  .header {
+    height: 100vh;
+  }
+
+  .container {
+    width: 100%;
+    margin-top: 40vh;
+    margin-right: 5%;
+    padding: 0 20px;
+  }
+}
+
+/*Sección 1 desde celulares a portátiles*/
+@media (min-width: 576px) and (max-width: 992px) {
+  .row {
+    width: 97vw;
+    margin: 0 auto;
+    justify-content: space-around !important;
+  }
+
+  .col {
+    width: 30% !important;
+    padding: 0;
+  }
+}
+
+/*Sección 1 "oradores" en celulares*/
+@media (max-width: 576px) {
+  .row {
+    display: block;
+  }
+
+  .card {
+    height: 12rem;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .col {
+    width: 22rem !important;
+    margin: 0 auto;
+    padding-right: 0;
+  }
+
+  .card-img-top {
+    height: 15rem;
+  }
+}
+
+/**Sección 2 y formulario hasta tablets*/
+@media (max-width: 768px) {
+  .container-1 {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .container-2 {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .imagen-honolulu {
+    width: 100%;
+    height: 18rem;
+    object-fit: cover;
+  }
+
+  .title-honolulu {
+    margin: 20px;
+  }
+
+  .parrafo_2 {
+    margin: 20px;
+  }
+
+  .boton {
+    margin: 0 0 10px 20px;
+  }
+
+  /**Formulario*/
+  .form {
+    width: 90vw;
+    margin: auto;
+  }
+
+  .input,
+  .form-name,
+  .form-surname {
+    width: 100%;
+    margin: 0 10px 10px 0;
+  }
+
+  .form-message {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .input {
+    padding: 10px;
+  }
+}
