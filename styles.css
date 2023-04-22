@@ -144,18 +144,23 @@
 /*Footer*/
 .footer {
   background: #194057;
-  color: white;
 }
 
 .contenedor {
   margin: 0 150px;
-  display: flex;
-  justify-content: center;
   align-items: center;
 }
 
 .text-f {
+  color: white;
+  text-decoration: none;
   font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.text-f:hover {
+  color: gray;
 }
 
 /*TODO: DISEÑO RESPONSIVO*/
@@ -185,6 +190,7 @@
 }
 
 /*Header hasta tablets*/
+/*Scroll oradores*/
 @media (max-width: 768px) {
   .header {
     height: 100vh;
@@ -195,6 +201,11 @@
     margin-top: 40vh;
     margin-right: 5%;
     padding: 0 20px;
+  }
+
+  /*sección 1*/
+  .oradores {
+    scroll-margin-top: 4.5rem;
   }
 }
 
@@ -249,8 +260,12 @@
   }
 }
 
-/**Sección 2 y formulario hasta tablets*/
+/*Sección 2 y formulario hasta tablets*/
 @media (max-width: 768px) {
+  .honolulu {
+    scroll-margin-top: 3.5rem;
+  }
+
   .container-1 {
     flex-direction: column;
     height: 100%;
@@ -263,7 +278,7 @@
 
   .imagen-honolulu {
     width: 100%;
-    height: 18rem;
+    height: 14rem;
     object-fit: cover;
   }
 
@@ -280,6 +295,10 @@
   }
 
   /**Formulario*/
+  .formulario {
+    scroll-margin-top: 4.5rem;
+  }
+
   .form {
     width: 90vw;
     margin: auto;
