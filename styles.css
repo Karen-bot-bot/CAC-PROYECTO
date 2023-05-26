@@ -248,27 +248,55 @@
   }
 
   /*PÁGINA TICKETS*/
- .precios {
-  margin: 0;
-  display: grid;
-  grid-template-rows: auto auto;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
- }
+  .precios {
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
 
- .full-width {
-  grid-column: 1 / span 2;
-  margin: 0 !important;
-}
+  .cubos {
+    padding: 0 20px !important;
+  }
 
-form.container, .input, .cubo {
-  padding: 0 !important;
-}
+  .full-width {
+    grid-column: 1 / span 2;
+    margin: 0 !important;
+  }
 
-.margen {
-  margin-right: 5px;
-}
+  form.container,
+  .input,
+  .cubo {
+    padding: 0 !important;
+  }
 
+  form.container {
+    margin: 20px 0;
+  }
+
+  .filas {
+    flex-direction: column;
+    margin-bottom: 0 !important;
+  }
+
+  .input, .form-message {
+    width: 85%;
+    display: flex;
+    margin: 10px auto !important;
+  }
+
+  .input-1 {
+    width: 100%;
+  }
+
+  .form-label {
+    padding: 10px;
+  }
+
+  .formulario {
+    margin: 20px;
+  }
 }
 
 /*Sección 2 y formulario hasta tablets*/
