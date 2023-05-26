@@ -19,12 +19,22 @@
   margin: 0 30px;
 }
 
+.navbar-nav .custom-link {
+  color: #198754;
+}
+
 .nav-link {
   color: rgb(173, 173, 173);
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active:visited {
   color: white;
+}
+
+.custom-link:hover,
+.custom-link.active:visited {
+  color: #96c93e;
 }
 
 /*Fondo*/
@@ -32,7 +42,7 @@
   height: 100vh;
   background-image: linear-gradient(
       to right,
-      #00000071 0%,
+      #0000007c 0%,
       rgba(0, 0, 0, 0.493) 100%
     ),
     url(img/ba1.jpg);
@@ -41,7 +51,7 @@
   padding: 0.1px;
 }
 
-.container {
+.custom-container {
   width: 45%;
   flex-direction: column;
   text-align: right;
@@ -85,7 +95,7 @@
   object-fit: cover;
 }
 
-.row {
+.fila {
   margin-right: 0;
 }
 
@@ -96,71 +106,49 @@
   margin: 0 auto;
 }
 
-.input {
-  border: 1px solid gainsboro;
-  display: inline-block;
-  overflow: hidden;
-  padding: 0 8px;
-  margin-bottom: 10px;
-}
-
-.form-name {
-  width: 48%;
-  margin-right: 10px;
-}
-
-.form-surname {
-  width: 48%;
-  margin-left: 10px;
-}
-
 .form-message {
-  max-width: 99.4%;
-  min-width: 99.4%;
-  min-height: 100px;
-  max-height: 100px;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 120px;
+  max-height: 120px;
   margin-bottom: 0;
   font-size: 18px;
   padding-top: 6px;
-}
-
-.form-submit {
-  font-weight: bold;
-  font-size: 18px;
-  color: white;
-  display: block;
-  width: 100%;
-  padding: 8px;
-  background: #96c93e;
-  border: none;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-
-.form-submit:hover {
-  background: #81ad35;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
 }
 
 /*Footer*/
 .footer {
-  background: #194057;
+  background: linear-gradient(to right, #203847, #194057);
 }
 
 .contenedor {
   margin: 0 150px;
-  align-items: center;
 }
 
 .text-f {
-  color: white;
-  text-decoration: none;
   font-size: 18px;
   cursor: pointer;
-  text-align: center;
 }
 
-.text-f:hover {
-  color: gray;
+.footer .contenedor a:hover {
+  color: gray !important;
+}
+
+/*PÁGINA TICKETS*/
+#total::placeholder {
+  color: rgb(9, 9, 158);
+}
+
+.btn-primary {
+  background-color: #96c93e;
+  border: none;
+  font-size: 18px;
+}
+
+.btn-primary:hover {
+  background-color: #86ad43;
 }
 
 /*TODO: DISEÑO RESPONSIVO*/
@@ -169,8 +157,8 @@
   .container-fluid {
     margin: 0;
   }
-  .nav-link,
-  .text-succces {
+
+  .nav-link {
     margin-bottom: 20px;
   }
 
@@ -196,7 +184,7 @@
     height: 100vh;
   }
 
-  .container {
+  .custom-container {
     width: 100%;
     margin-top: 40vh;
     margin-right: 5%;
@@ -215,7 +203,7 @@
     height: 100vh;
   }
 
-  .container {
+  .custom-container {
     width: 100%;
     margin-top: 40vh;
     margin-right: 5%;
@@ -225,13 +213,13 @@
 
 /*Sección 1 desde celulares a portátiles*/
 @media (min-width: 576px) and (max-width: 992px) {
-  .row {
+  .fila {
     width: 97vw;
     margin: 0 auto;
     justify-content: space-around !important;
   }
 
-  .col {
+  .columna {
     width: 30% !important;
     padding: 0;
   }
@@ -239,7 +227,7 @@
 
 /*Sección 1 "oradores" en celulares*/
 @media (max-width: 576px) {
-  .row {
+  .fila {
     display: block;
   }
 
@@ -249,7 +237,7 @@
     margin-bottom: 20px;
   }
 
-  .col {
+  .columna {
     width: 22rem !important;
     margin: 0 auto;
     padding-right: 0;
@@ -258,6 +246,29 @@
   .card-img-top {
     height: 15rem;
   }
+
+  /*PÁGINA TICKETS*/
+ .precios {
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+ }
+
+ .full-width {
+  grid-column: 1 / span 2;
+  margin: 0 !important;
+}
+
+form.container, .input, .cubo {
+  padding: 0 !important;
+}
+
+.margen {
+  margin-right: 5px;
+}
+
 }
 
 /*Sección 2 y formulario hasta tablets*/
@@ -302,21 +313,5 @@
   .form {
     width: 90vw;
     margin: auto;
-  }
-
-  .input,
-  .form-name,
-  .form-surname {
-    width: 100%;
-    margin: 0 10px 10px 0;
-  }
-
-  .form-message {
-    width: 100%;
-    margin-right: 0;
-  }
-
-  .input {
-    padding: 10px;
   }
 }
