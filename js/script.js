@@ -18,8 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-/*Desactivar flechas de incremento y decremento*/
-
+/*Desactivar flechas de incremento y decremento en el placeholder Total*/
 var numberInput = document.getElementById("total");
 numberInput.addEventListener("keydown", function (event) {
   if (event.key === "ArrowUp" || event.key === "ArrowDown") {
@@ -27,33 +26,41 @@ numberInput.addEventListener("keydown", function (event) {
   }
 });
 
-/**/
+/* ===============
+  FORMULARIO  */
 
 let valorEntrada = 200;
-let cantidadEntradas = document.getElementById("cantidad");
-let categoria = document.getElementById("categoria");
+let cantidadEntradas;
+let categoria;
 let compraTotal = document.getElementById("total");
+let placeholderOriginal = compraTotal.placeholder;
 
 document.getElementById("resumen").addEventListener("click", function (event) {
   event.preventDefault();
 
+  cantidadEntradas = document.getElementById("cantidad").value;
+  categoria = document.getElementById("categoria").value;
   let totalFinal = 0;
 
   if (categoria === "estudiante") {
     totalFinal = cantidadEntradas * valorEntrada * 0.2;
-    console.log(totalFinal);
   } else if (categoria === "trainee") {
     totalFinal = cantidadEntradas * valorEntrada * 0.5;
-    console.log(totalFinal);
   } else if (categoria === "junior") {
-    totalFinal = cantidadEntradas * valorEntrada * 0.15;
-    console.log(totalFinal);
+    totalFinal = cantidadEntradas * valorEntrada * 0.85;
   }
 
-  compraTotal.textContent = "Total a pagar: $" + totalFinal.toFixed(2);
-  console.log(
-    (compraTotal.textContent = "Total a pagar: $" + totalFinal.toFixed(2))
-  );
+  compraTotal.placeholder = "Total a pagar: $" + totalFinal.toFixed(2);
+  console.log(compraTotal.placeholder);
 });
 
-alert("Hola");
+// Al presionar en el botón "Borrar" se restablece el formulario
+document.getElementById("reset").addEventListener("click", function () {
+  document.getElementById("nombre").value = "";
+  document.getElementById("apellido").value = "";
+  document.getElementById("correo").value = "";
+  document.getElementById("cantidad").value = "";
+  document.getElementById("categoria").value = "estudiante";
+
+  compraTotal.placeholder = placeholderOriginal;
+});
